@@ -15,7 +15,7 @@ const NavBar = () => (
           <Nav.Link className="mx-3" href="/CleverCat">Clever Cat</Nav.Link>
           <Nav.Link className="mx-3" href="/Contact">Contact</Nav.Link>
         </Nav>
-        <Nav.Link><CartWidgetComponet /></Nav.Link>
+        <Nav.Link href="/Cart"><CartWidgetComponet /></Nav.Link>
     </NavbarBootstrap>
   </>
 );
