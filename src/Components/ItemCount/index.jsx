@@ -2,24 +2,24 @@ import { useState } from "react";
 import { Button, ButtonGroup } from 'react-bootstrap';
 
 
-const ItemCountComponent = () => {
+const ItemCountComponent = ({stock, initial}) => {
     const [count, setCount] = useState(0);
     console.log(count);
 
     const increment = () => {
-        if (count === 5) {
+        if (count < stock) {
           console.log(count);
-          return;
+          return setCount(count + 1);
         }
-        setCount(count + 1);
+        // setCount(count + 1);
       };
       
       const decrement = () => {
-        if (count === 0) {
+        if (count > initial) {
           console.log(count);
-          return;
+          return setCount(count - 1);
         }
-        setCount(count - 1);
+        // setCount(count - 1);
       };
       return (
         <div>

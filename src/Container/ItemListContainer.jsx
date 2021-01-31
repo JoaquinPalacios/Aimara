@@ -1,10 +1,9 @@
 import ItemCountComponent from "../Components/ItemCount"
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
     return (
         <>
-          <span className="badge badge-info">{greeting}</span>
-          <ItemCountComponent />
+          <ItemCountComponent stock={5} initial={1}/>
         </>
     )
 };
