@@ -11,7 +11,6 @@ const ItemCountComponent = ({stock, initial}) => {
           console.log(count);
           return setCount(count + 1);
         }
-        // setCount(count + 1);
       };
       
       const decrement = () => {
@@ -19,7 +18,6 @@ const ItemCountComponent = ({stock, initial}) => {
           console.log(count);
           return setCount(count - 1);
         }
-        // setCount(count - 1);
       };
       return (
         <div>
