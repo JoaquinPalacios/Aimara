@@ -3,7 +3,7 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 
 
 const ItemCountComponent = ({stock, initial}) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(initial);
     console.log(count);
 
     const increment = () => {
