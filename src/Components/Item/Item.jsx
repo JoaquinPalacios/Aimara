@@ -1,8 +1,10 @@
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Container, CardDeck } from "react-bootstrap";
 
 const Item = ({ varietals }) => {
     return (
     <>
+        <Container>
+        <CardDeck sm={4}>
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={varietals.pictureUrl} />
             <Card.Body>
@@ -13,6 +15,8 @@ const Item = ({ varietals }) => {
                 <Button variant="info">Details</Button>
             </Card.Body>
         </Card>
+        </CardDeck>
+        </Container>
     </>
     )
 };
