@@ -14,7 +14,7 @@ const ItemListContainer = () => {
   });
 
   myPromise.then((result) => setVarietals(result));
-  }[]);
+  }, []);
     return (
         <>
           <ItemList varietals={varietals} />

@@ -1,10 +1,10 @@
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
-Const Item = ({ varietals }) => {
-    return 
+const Item = ({ varietals }) => {
+    return (
     <>
         <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src={varietals.pictureUrl} />
             <Card.Body>
                 <Card.Title>{varietals.name}</Card.Title>
                 <Card.Text>
@@ -14,6 +14,8 @@ Const Item = ({ varietals }) => {
             </Card.Body>
         </Card>
     </>
+    )
 };
+
 
 export default Item;
