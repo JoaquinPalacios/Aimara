@@ -5,7 +5,6 @@ import ItemDetail from "../../Components/ItemDetail/ItemDetail";
 
 
 const ItemDetailContainer = () => {      
-    // const [loading, setLoading] = useState(true);
     const [varietals, setVarietals] = useState([]);
     useEffect(() => {
         const myPromise = new Promise((resolve, reject) => {
@@ -14,7 +13,6 @@ const ItemDetailContainer = () => {
         
           myPromise.then((result) => setVarietals(result));
           }, []);
-        //   setLoading(false);
   
     return (
               <>
