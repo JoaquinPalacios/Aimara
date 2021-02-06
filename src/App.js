@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from './Components/Navbar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from './Container/ItemListContainer/ItemListContainer';
-// import ItemListContainer from './Container/ItemListContainer';
+import ItemDetailContainer from './Container/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
     <>
       <NavBar />
       <ItemListContainer />
+      <ItemDetailContainer />
     </>
   );
 }

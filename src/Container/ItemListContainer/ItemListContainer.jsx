@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import Aimara from "../../Aimara";
-// import ItemCountComponent from "../../Components/ItemCount";
 import ItemList from "../../Components/ItemList/ItemList";
 
 const ItemListContainer = () => {
@@ -17,9 +16,8 @@ const ItemListContainer = () => {
   }, []);
     return (
         <>
-          {varietals.length === 0 ? (<Spinner animation='border' />) : (
+          {varietals.length === 0 ? (<Spinner animation="grow" variant="info" />) : (
           <ItemList varietals={varietals} />
-          // <ItemCountComponent stock={5} initial={1}/>
           )}
         </>
     )
