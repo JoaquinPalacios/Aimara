@@ -10,6 +10,7 @@ const ItemDetail = ({ varietal }) => {
                 <div>
                     <ItemCountComponent stock={5} initial={1} />
                     <Button>Buy</Button>
+                             
                 </div>                  
         </div>
     )
