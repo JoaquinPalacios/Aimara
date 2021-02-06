@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
     const [varietals, setVarietals] = useState([]);
     useEffect(() => {
         const myPromise = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(Aimara), 2000);
+            setTimeout(() => resolve(Aimara), 3500);
           });
         
           myPromise.then((result) => setVarietals(result));
