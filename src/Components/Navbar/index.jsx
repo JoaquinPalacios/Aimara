@@ -1,21 +1,31 @@
 import React from "react";
 import { Navbar as NavbarBootstrap, Nav } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
 import CartWidgetComponet from "../CartWidget/CartWidget";
 import LogoComponent from "../Logo/LogoComponent";
 
 
 const NavBar = () => (
   <>
-    <NavbarBootstrap bg="light" variant="light">
-        
-        <NavbarBootstrap.Brand href="/" className="mx-4"><LogoComponent/> Global Bridge</NavbarBootstrap.Brand>
+    <NavbarBootstrap bg="light" variant="light">        
+        <Link to="/">
+            <NavbarBootstrap.Brand className="mx-4"><LogoComponent/> Global Bridge</NavbarBootstrap.Brand>
+        </Link>
         <Nav className="ml-auto">
-          <Nav.Link className="mx-3" href="/">Global Bridge</Nav.Link>
-          <Nav.Link className="mx-3" href="/Aimara">Aimara</Nav.Link>
-          <Nav.Link className="mx-3" href="/CleverCat">Clever Cat</Nav.Link>
-          <Nav.Link className="mx-3" href="/Contact">Contact</Nav.Link>
+            <Link to="/">
+                <Nav className="mx-3">Global Bridge</Nav>
+            </Link>
+            <Link to="/Aimara">
+                <Nav className="mx-3">Aimara</Nav>
+            </Link>
+            <Link to="/CleverCat">
+                <Nav className="mx-3">Clever Cat</Nav>
+            </Link>
+            <Link to="/Contact">
+                <Nav className="mx-3">Contact</Nav>
+            </Link>
         </Nav>
-        <Nav.Link href="/Cart"><CartWidgetComponet /></Nav.Link>
+        <NavLink to="/Cart"><CartWidgetComponet /></NavLink>
     </NavbarBootstrap>
   </>
 );

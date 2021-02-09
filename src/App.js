@@ -4,14 +4,23 @@ import NavBar from './Components/Navbar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from './Container/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Container/ItemDetailContainer/ItemDetailContainer';
+import  {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
 function App() {
   return (
     <>
-      <NavBar />
-      <ItemListContainer />
-      <ItemDetailContainer />
+        <BrowserRouter>
+            <NavBar />
+            <Switch>
+              <Route exact path = "/">
+                <ItemListContainer />
+              </Route>
+              <Route path = "/ItemDetailContainer">
+                <ItemDetailContainer />
+              </Route>
+            </Switch>
+        </BrowserRouter>
     </>
   );
 }
