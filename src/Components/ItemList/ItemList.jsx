@@ -1,4 +1,5 @@
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Item from "../Item/Item";
 
 
@@ -8,8 +9,11 @@ const ItemList = ({ varietals }) => {
         {varietals.map((varietals) => {
         return (
         <>
-            <Item style={{ width: '18rem' }} key={varietals.id} varietals={varietals} />
-            <Button className="my-3 mr-5" variant="info">Details</Button>
+            <Link to = {`/item/${varietals.id}`}>
+              <Item style={{ width: '18rem' }} key={varietals.id} varietals={varietals} />
+            </Link>
+            
+            {/* <Button className="my-3 mr-5" variant="info">Details</Button> */}
         </>
         )})};  
       </div>
