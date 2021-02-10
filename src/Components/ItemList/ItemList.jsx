@@ -9,7 +9,7 @@ const ItemList = ({ varietals }) => {
         {varietals.map((varietals) => {
         return (
         <>
-            <Link to = {`/item/${varietals.id}`}>
+            <Link to = {`/item/${varietals.title}`}>
               <Item style={{ width: '18rem' }} key={varietals.id} varietals={varietals} />
             </Link>
             
