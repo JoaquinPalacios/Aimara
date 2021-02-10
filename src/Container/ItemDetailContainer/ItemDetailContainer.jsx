@@ -10,16 +10,16 @@ const ItemDetailContainer = () => {
     useEffect(() => {
       console.log(varietalId);
       let showProduct = Aimara.filter((element) => {
-        return element.id === varietalId
+        return element.title === varietalId
       });
-      setVarietals(showProduct[0].id);
+      setVarietals(showProduct[0].title);
      
           }, [varietalId]);
   
     return (
               <>
            {varietals.length === 0 ? (<Spinner animation="grow" variant="info" />) : (
-             <ItemDetail varietalId={varietalId} key={varietals.id} varietals={varietals} />
+             <ItemDetail key={varietals.id} varietals={varietals} />
            )}
         </>
     );           
