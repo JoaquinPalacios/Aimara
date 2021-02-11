@@ -8,12 +8,22 @@ const ItemDetailContainer = () => {
     const { varietalId } = useParams([]);
     console.log(varietalId);
     useEffect(() => {
-      let showProduct = Aimara.filter((element) => {
-        return element.title === varietalId
+      const showProduct = () => {
+        return new Promise((result) =>
+          result(Aimara.find((product) => product.title === varietalId))
+        );
+      };
+      showProduct(varietalId).then((product) => {
+        setVarietals(product);
       });
-      setVarietals(showProduct[0].title);
+    }, [varietalId]);
+    // useEffect(() => {
+    //   let showProduct = Aimara.filter((element) => {
+    //     return element.title === varietalId
+    //   });
+    //   setVarietals(showProduct[0].title);
      
-          }, [varietalId]);
+    //       }, [varietalId]);
   
     return <ItemDetail key={varietals.id} varietals={varietals} />;           
 };  
