@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Aimara from "../../Aimara";
 import ItemDetail from "../../Components/ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {      
     const [varietals, setVarietals] = useState([]);
-    const [varietalId] = useParams();
+    const { varietalId } = useParams([]);
+    console.log(varietalId);
     useEffect(() => {
-      console.log(varietalId);
       let showProduct = Aimara.filter((element) => {
         return element.title === varietalId
       });
@@ -16,13 +15,7 @@ const ItemDetailContainer = () => {
      
           }, [varietalId]);
   
-    return (
-              <>
-           {varietals.length === 0 ? (<Spinner animation="grow" variant="info" />) : (
-             <ItemDetail key={varietals.id} varietals={varietals} />
-           )}
-        </>
-    );           
+    return <ItemDetail key={varietals.id} varietals={varietals} />;           
 };  
 
 export default ItemDetailContainer;

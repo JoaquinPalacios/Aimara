@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Button, ButtonGroup } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 
 const ItemCountComponent = ({stock, initial}) => {
     const [count, setCount] = useState(initial);
-    console.log(count);
 
     const increment = () => {
         if (count < stock) {
@@ -27,7 +27,9 @@ const ItemCountComponent = ({stock, initial}) => {
                 <Button onClick={increment} variant="outline-info" className="font-weight-bold">+</Button>
             </ButtonGroup>
             <br />
-            <Button variant="info" className="mt-2 mx-2">Add to Cart</Button>
+            <Link to='/Cart'>
+                <Button variant="info" className="mt-2 mx-2">Add to Cart</Button>
+            </Link>
             
         </div>
       );
