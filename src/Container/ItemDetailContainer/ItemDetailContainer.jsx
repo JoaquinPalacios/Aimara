@@ -17,13 +17,6 @@ const ItemDetailContainer = () => {
         setVarietals(product);
       });
     }, [varietalId]);
-    // useEffect(() => {
-    //   let showProduct = Aimara.filter((element) => {
-    //     return element.title === varietalId
-    //   });
-    //   setVarietals(showProduct[0].title);
-     
-    //       }, [varietalId]);
   
     return <ItemDetail key={varietals.id} varietals={varietals} />;           
 };  
