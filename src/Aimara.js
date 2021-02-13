@@ -18,7 +18,7 @@ const Aimara = [{
     id: 3,
     category: "red",
     title: "Blend",
-    description: "This is your Product description. Write a short overview including important features, pricing and any other relevant info for a potential buyer. Consider adding an image or video that shows off your great-looking product and entices users to make a purchase.",
+    description: "An unique blend of Malbec, Cabernet Sauvignon and Merlot, with a deep red coloured and deep purple tinges.",
     price: 42,
     pictureUrl: "https://i.ibb.co/56phK4M/download.jpg",
 },
