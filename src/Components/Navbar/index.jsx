@@ -15,11 +15,11 @@ const NavBar = () => (
             <Link to="/">
                 <Nav className="mx-3">Global Bridge</Nav>
             </Link>
-            <Link to="/Aimara">
-                <Nav className="mx-3">Aimara</Nav>
+            <Link to="/AimaraRedWines">
+                <Nav className="mx-3">Aimara Red Wines</Nav>
             </Link>
-            <Link to="/CleverCat">
-                <Nav className="mx-3">Clever Cat</Nav>
+            <Link to="/AimaraWhiteWines">
+                <Nav className="mx-3">Aimara White Wines</Nav>
             </Link>
             <Link to="/Contact">
                 <Nav className="mx-3">Contact</Nav>
