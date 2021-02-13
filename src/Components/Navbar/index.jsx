@@ -9,17 +9,17 @@ const NavBar = () => (
   <>
     <NavbarBootstrap bg="light" variant="light">        
         <Link to="/">
-            <NavbarBootstrap.Brand className="mx-4"><LogoComponent/> Global Bridge</NavbarBootstrap.Brand>
+            <NavbarBootstrap.Brand className="mx-4"><LogoComponent/> Aimara</NavbarBootstrap.Brand>
         </Link>
         <Nav className="ml-auto">
             <Link to="/">
-                <Nav className="mx-3">Global Bridge</Nav>
+                <Nav className="mx-3">Aimara</Nav>
             </Link>
             <Link to="/category/red">
-                <Nav className="mx-3">Aimara Red Wines</Nav>
+                <Nav className="mx-3">Red Wines</Nav>
             </Link>
             <Link to="/category/white">
-                <Nav className="mx-3">Aimara White Wines</Nav>
+                <Nav className="mx-3">White Wines</Nav>
             </Link>
             <Link to="/Contact">
                 <Nav className="mx-3">Contact</Nav>
