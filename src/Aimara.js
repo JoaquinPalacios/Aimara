@@ -1,6 +1,6 @@
 const Aimara = [{
     id: 1,
-    category: "Red Whines",
+    category: "red",
     title: "Malbec",
     description: "A symbolic Argentinian wine with body and presence in the glass, deep red coloured with ruby tinges and a blackberry and plum aroma. It displays a juicy volume in the mouth with pleasant and fruity tannins, as a result of its aging in American wood.",
     price: 45,
@@ -8,7 +8,7 @@ const Aimara = [{
 },
 {
     id: 2,
-    category: "Red Whines",
+    category: "red",
     title: "Cavernet Sauvignon",
     description: "A frank and harmonious wine with an outstanding varietal expression, deep red coloured with purple tinges and a spicy aroma with hints of mocha cream and red fruits. It displays a somewhat wild and persistent flavor in the mouth, as a result of its aging in American wood.",
     price: 38,
@@ -16,7 +16,7 @@ const Aimara = [{
 },
 {
     id: 3,
-    category: "Red Whines",
+    category: "red",
     title: "Blend",
     description: "This is your Product description. Write a short overview including important features, pricing and any other relevant info for a potential buyer. Consider adding an image or video that shows off your great-looking product and entices users to make a purchase.",
     price: 42,
@@ -24,7 +24,7 @@ const Aimara = [{
 },
 {
     id: 4,
-    category: "White Whines",
+    category: "white",
     title: "Chardonay",
     description: "This is your Product description. Write a short overview including important features, pricing and any other relevant info for a potential buyer. Consider adding an image or video that shows off your great-looking product and entices users to make a purchase.",
     price: 40,
@@ -32,7 +32,7 @@ const Aimara = [{
 },
 {
     id: 5,
-    category: "White Whines",
+    category: "white",
     title: "Sauvignon Blanc",
     description: "This is your Product description. Write a short overview including important features, pricing and any other relevant info for a potential buyer. Consider adding an image or video that shows off your great-looking product and entices users to make a purchase.",
     price: 38,

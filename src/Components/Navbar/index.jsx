@@ -15,10 +15,10 @@ const NavBar = () => (
             <Link to="/">
                 <Nav className="mx-3">Global Bridge</Nav>
             </Link>
-            <Link to="/AimaraRedWines">
+            <Link to="/category/red">
                 <Nav className="mx-3">Aimara Red Wines</Nav>
             </Link>
-            <Link to="/AimaraWhiteWines">
+            <Link to="/category/white">
                 <Nav className="mx-3">Aimara White Wines</Nav>
             </Link>
             <Link to="/Contact">

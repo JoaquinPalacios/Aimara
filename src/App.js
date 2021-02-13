@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
             <NavBar />
             <Switch>
-              <Route exact path = "/">
+              <Route exact path = "/category/:categoryId">
                 <ItemListContainer />
               </Route>
               <Route exact path = "/Item/:varietalId">
