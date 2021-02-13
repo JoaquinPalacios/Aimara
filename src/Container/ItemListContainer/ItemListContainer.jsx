@@ -10,11 +10,13 @@ const ItemListContainer = () => {
   
   useEffect(() => {
     const myPromise = new Promise((resolve, reject) => {
-      const products = Aimara.filter((producto) => {
-       return producto.category.toString() === categoryId;
-      });
-      resolve(products);
-    });
+      if (categoryId) {
+        const products = Aimara.filter((producto) => {
+        return producto.category.toString() === categoryId;
+        });
+        resolve(products);
+      } else resolve(Aimara);
+        });
     myPromise.then((result) => setVarietals(result));
   }, [categoryId]);
     return <ItemList varietals={varietals} />
