@@ -24,5 +24,4 @@ const ItemDetail = ({ varietals }) => {
     )
 };
 
-
 export default ItemDetail;

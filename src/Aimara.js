@@ -1,4 +1,4 @@
-const Aimara = [{
+const aimara = [{
     id: 1,
     category: "red",
     title: "Malbec",
@@ -39,4 +39,4 @@ const Aimara = [{
     pictureUrl: "https://i.ibb.co/GFBH99Y/White-wine.jpg",
 }];
 
-export default Aimara;
+export default aimara;

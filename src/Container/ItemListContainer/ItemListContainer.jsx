@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Aimara from "../../Aimara";
+import aimara from "../../aimara";
 import ItemList from "../../Components/ItemList/ItemList";
 
 const ItemListContainer = () => {
@@ -11,11 +11,11 @@ const ItemListContainer = () => {
   useEffect(() => {
     const myPromise = new Promise((resolve, reject) => {
       if (categoryId) {
-        const products = Aimara.filter((producto) => {
+        const products = aimara.filter((producto) => {
         return producto.category.toString() === categoryId;
         });
         resolve(products);
-      } else resolve(Aimara);
+      } else resolve(aimara);
         });
     myPromise.then((result) => setVarietals(result));
   }, [categoryId]);

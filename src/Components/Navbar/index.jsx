@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import CartWidgetComponet from "../CartWidget/CartWidget";
 import LogoComponent from "../Logo/LogoComponent";
 
-
 const NavBar = () => (
   <>
     <NavbarBootstrap bg="light" variant="light">        

@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Aimara from "../../Aimara";
+import aimara from "../../aimara";
 import ItemDetail from "../../Components/ItemDetail/ItemDetail";
 
 const showProduct = (varietalId) => {
   return new Promise((result) =>
-    result(Aimara.find((product) => product.title === varietalId))
+    result(aimara.find((product) => product.title === varietalId))
   );
 };
-
 
 const ItemDetailContainer = () => {      
     const [varietals, setVarietals] = useState([]);
@@ -19,8 +18,7 @@ const ItemDetailContainer = () => {
       showProduct(varietalId).then((product) => {
         setVarietals(product);
       });
-    }, [varietalId]);
-  
+    }, [varietalId]);  
     return <ItemDetail key={varietals.id} varietals={varietals} />;           
 };  
 
