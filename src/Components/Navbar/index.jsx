@@ -8,7 +8,7 @@ const NavBar = () => (
   <>
     <NavbarBootstrap bg="light" variant="light">        
         <Link to="/" className="text-decoration-none">
-            <NavbarBootstrap.Brand className="mx-4"><LogoComponent/> AIMARA</NavbarBootstrap.Brand>
+            <NavbarBootstrap.Brand className="mx-5 px-5"><LogoComponent /> AIMARA</NavbarBootstrap.Brand>
         </Link>
         <Nav className="ml-auto">
             <Link to="/" className="text-decoration-none text-dark">
@@ -24,7 +24,7 @@ const NavBar = () => (
                 <Nav className="mx-3">Contact</Nav>
             </Link>
         </Nav>
-        <NavLink to="/Cart" className="text-info"><CartWidgetComponet /></NavLink>
+        <NavLink to="/Cart" className="text-muted"><CartWidgetComponet /></NavLink>
     </NavbarBootstrap>
   </>
 );
