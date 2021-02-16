@@ -11,7 +11,7 @@ const ItemList = ({ varietals }) => {
         return (
         <>
         <Container>
-            <Link to={`/item/${varietals.title}`}>
+            <Link to={`/item/${varietals.title}`} className="text-decoration-none text-muted">
               <Item style={{ width: '18rem' }} key={varietals.id} varietals={varietals} />
             </Link>            
         </Container>
@@ -21,5 +21,4 @@ const ItemList = ({ varietals }) => {
   );
 };
 
-
-  export default ItemList;
+export default ItemList;

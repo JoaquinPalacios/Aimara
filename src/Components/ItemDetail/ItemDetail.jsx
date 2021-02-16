@@ -13,10 +13,10 @@ const ItemDetail = ({ varietals }) => {
     return (    
         <>
           <br />
-          <Container className="py-5 px-5">
+          <Container className="py-5 px-5 shadow">
                 <Item varietals={varietals} />
                 <div className="ml-4 mr-3">
-                    <div className="font-italic text-center">{varietals.description}</div>
+                    <div className="font-italic mb-4 text-center text-muted">{varietals.description}</div>
                     {checkout ? <Link to='/Cart'><Button variant="info">Checkout</Button></Link> : <ItemCountComponent className="d-flex justify-content-center" onAdd={onAdd} stock={5} initial={1} />}                                 
                 </div>
           </Container>

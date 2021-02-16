@@ -4,14 +4,16 @@ import "./Style.scss";
 const Item = ({ varietals }) => {
     return (
     <>
-        <Container>
-            <Card>
-                <Card.Img variant="top" src={varietals.pictureUrl} />
+        <Container className="px-1">
+            <Card className="clemmy">
+                <Card.Img variant="top" src={varietals.pictureUrl} className="shadow"/>
                 <Card.Body>
-                    <Card.Title>{varietals.title}</Card.Title>
-                    <Card.Text>
+                    <Card.Title className="d-flex justify-content-center text-muted">
+                        {varietals.title}
+                        </Card.Title>
+                    <Card.Subtitle className="d-flex justify-content-center text-muted">
                       ${varietals.price}
-                    </Card.Text>
+                    </Card.Subtitle>
                 </Card.Body>
                 </Card>        
         </Container>

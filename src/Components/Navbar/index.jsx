@@ -7,24 +7,24 @@ import LogoComponent from "../Logo/LogoComponent";
 const NavBar = () => (
   <>
     <NavbarBootstrap bg="light" variant="light">        
-        <Link to="/">
-            <NavbarBootstrap.Brand className="mx-4"><LogoComponent/> Aimara</NavbarBootstrap.Brand>
+        <Link to="/" className="text-decoration-none">
+            <NavbarBootstrap.Brand className="mx-4"><LogoComponent/> AIMARA</NavbarBootstrap.Brand>
         </Link>
         <Nav className="ml-auto">
-            <Link to="/">
+            <Link to="/" className="text-decoration-none text-dark">
                 <Nav className="mx-3">Aimara</Nav>
             </Link>
-            <Link to="/category/red">
+            <Link to="/category/red" className="text-decoration-none text-dark">
                 <Nav className="mx-3">Red Wines</Nav>
             </Link>
-            <Link to="/category/white">
+            <Link to="/category/white" className="text-decoration-none text-dark">
                 <Nav className="mx-3">White Wines</Nav>
             </Link>
-            <Link to="/Contact">
+            <Link to="/Contact" className="text-decoration-none text-dark">
                 <Nav className="mx-3">Contact</Nav>
             </Link>
         </Nav>
-        <NavLink to="/Cart"><CartWidgetComponet /></NavLink>
+        <NavLink to="/Cart" className="text-info"><CartWidgetComponet /></NavLink>
     </NavbarBootstrap>
   </>
 );

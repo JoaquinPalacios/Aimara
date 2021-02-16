@@ -23,12 +23,12 @@ const ItemCountComponent = ({stock, initial, onAdd}) => {
     return (
       <div className="d-flex justify-content-center">
           <ButtonGroup>
-              <Button onClick={decrement} variant="outline-info" className="font-weight-bold">-</Button>
-              <p className="bg-light px-4 mt-2 text-secondary outline-info">  {count}  </p>
-              <Button onClick={increment} variant="outline-info" className="font-weight-bold">+</Button>
+              <Button onClick={decrement} variant="info" className="font-weight-bold">-</Button>
+              <p className="clemmy px-4 mt-3 text-secondary outline-info">  {count}  </p>
+              <Button onClick={increment} variant="info" className="font-weight-bold">+</Button>
           </ButtonGroup>
           <br />
-          <Button onClick={handlerOnAdd} variant="info" className="mt-2 mx-2">Add to Cart</Button>            
+          <Button onClick={handlerOnAdd} variant="info" className="mt-2 mx-5">Add to Cart</Button>            
       </div>
     );
 }
