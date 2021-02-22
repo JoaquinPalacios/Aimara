@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import CartContext from "../../Context/CartContext";
 import Item from "../Item/Item";
 import ItemCountComponent from "../ItemCount";
 
 const ItemDetail = ({ varietals }) => {
     const [checkout, setCheckout] = useState(false);
+    const { list, addCart } = useContext(CartContext);
+    // console.log(setList)
+    // console.log(totalQuantityCart)
+    // console.log(setTotalQuantityCart)
     const onAdd = (count) => {
         console.log("Selected ", count);
         setCheckout(true);
+        addCart({Item: varietals, Quantity: count});
       };
+      console.log(list)
+
     return (    
         <>
           <br />
