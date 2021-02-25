@@ -1,10 +1,10 @@
 import { useState } from "react";
-import CartContext from "./CartContext";
-
-
+import { CartContext } from "./CartContext";
+// import CartContext from "./CartContext";
 
 export const CartProvider = ({ children }) => {
     const [list, setList] = useState([]);
+    // const [totalQuantity, setTotalQuantity] = useState(0);
 
     const addCart = (varietals) => {
         const isInCart = list.find((x) => x.id === varietals.id);
@@ -18,13 +18,10 @@ export const CartProvider = ({ children }) => {
             setList([...list, { ...varietals, qty: 1 }]);
         }
     };
-       
+
     // const isInCart = (id) => {
     //     return list.findIndex(product => product.id === id)
     // };
-
-
-    // const [totalQuantityCart, setTotalQuantityCart] = useState(0);
 
     // function addProducto(newProduct, quantity) {
     //     const compareIds = (varietals) => varietals.id === newProduct.id;
@@ -48,7 +45,7 @@ export const CartProvider = ({ children }) => {
     // };
     return(
     <>
-      <CartContext.Provider value={{list, addCart}}>
+      <CartContext.Provider value={{ list, addCart }}>
           {children}
       </CartContext.Provider>
     </>);
