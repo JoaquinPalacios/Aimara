@@ -1,8 +1,8 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Button, ButtonGroup } from 'react-bootstrap';
 
-const ItemCountComponent = ({stock, initial, onAdd}) => {
-    const [count, setCount] = useState(initial);
+const ItemCountComponent = ({stock, initial, onAdd, count, setCount}) => {
+    // const [count, setCount] = useState(initial);
 
     const increment = () => {
         if (count < stock) {

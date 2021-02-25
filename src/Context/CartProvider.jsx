@@ -6,18 +6,35 @@ export const CartProvider = ({ children }) => {
     const [list, setList] = useState([]);
     // const [totalQuantity, setTotalQuantity] = useState(0);
 
-    const addCart = (varietals) => {
-        const isInCart = list.find((x) => x.id === varietals.id);
-        if (isInCart) {
-            setList(
-                list.map((x) =>
-                x.id === varietals.id ? { ...isInCart, qty: isInCart.qty + 1 } : x
-              )
-            );
-        }else{           
-            setList([...list, { ...varietals, qty: 1 }]);
+    const addCart = (varietalCount) => {
+        if (list.find((item) => item.id === varietalCount.id)) {
+          const newVarietal = list.map((varietal) => {
+            if (varietal.id === varietalCount.id) {
+              return { ...varietal, count: varietalCount.count + varietal.count };
+            }
+            return varietal;
+          });
+          setList(newVarietal);
+        } else {
+          setList((state) => {
+            return [...state, varietalCount];
+          });
         }
-    };
+      };
+      console.log("list", list);
+      
+    // const addCart = (varietals) => {
+    //     const isInCart = list.find((x) => x.id === varietals.id);
+    //     if (isInCart) {
+    //         setList(
+    //             list.map((x) =>
+    //             x.id === varietals.id ? { ...isInCart, qty: isInCart.qty + 1 } : x
+    //           )
+    //         );
+    //     }else{           
+    //         setList([...list, { ...varietals, qty: 1 }]);
+    //     }
+    // };
 
     // const isInCart = (id) => {
     //     return list.findIndex(product => product.id === id)
