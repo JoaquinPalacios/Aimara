@@ -2,12 +2,13 @@
 // import { Spinner } from "react-bootstrap";
 // import CartContext, { useCartContext } from "../../Context/CartContext"
 
+import { Table } from "react-bootstrap";
 import { useCartContext } from "../../Context/CartContext";
 
 const CartComponent = () => {
     const { list } = useCartContext();
     return (
-        <table>
+        <Table>
           <thead>
             <tr>
               <th>Product</th>
@@ -32,7 +33,7 @@ const CartComponent = () => {
               </tr>
             ))}
           </tbody>
-        </table>
+        </Table>
     );
   };
 // const CartComponent = (varietals) => {
