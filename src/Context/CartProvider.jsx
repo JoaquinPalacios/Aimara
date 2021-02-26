@@ -22,6 +22,12 @@ export const CartProvider = ({ children }) => {
         }
       };
       console.log("list", list);
+      const totalPrice = () => {
+        return list.reduce((prev, next) => (prev + (next.count * next.price)), 0)
+      };
+      // function totalPrice() {
+      //   return list.reduce((prev, next) => (prev + (next.quantity * next.price)),0)
+      //   }
       
     // const addCart = (varietals) => {
     //     const isInCart = list.find((x) => x.id === varietals.id);
@@ -62,7 +68,7 @@ export const CartProvider = ({ children }) => {
     // };
     return(
     <>
-      <CartContext.Provider value={{ list, addCart }}>
+      <CartContext.Provider value={{ list, addCart, totalPrice }}>
           {children}
       </CartContext.Provider>
     </>);

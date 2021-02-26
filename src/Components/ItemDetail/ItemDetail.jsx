@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
-// import CartContext, { useCartContext } from "../../Context/CartContext";
 import Item from "../Item/Item";
 import ItemCountComponent from "../ItemCount";
 
@@ -20,9 +19,7 @@ const ItemDetail = ({ varietals }) => {
           title: varietals.title,
           count
         });
-      //   addCart({Item: varietals, Quantity: count});
       };
-      // console.log(list)
 
     return (    
         <>

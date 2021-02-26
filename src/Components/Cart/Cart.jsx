@@ -4,16 +4,17 @@
 
 import { Table } from "react-bootstrap";
 import { useCartContext } from "../../Context/CartContext";
+// import ItemCountComponent from "../ItemCount";
 
 const CartComponent = () => {
-    const { list } = useCartContext();
+    const { list, totalPrice } = useCartContext();
     return (
-        <Table>
+        <Table striped hover>
           <thead>
             <tr>
               <th>Product</th>
               <th>Title</th>
-              <th>Count</th>
+              <th>Quantity</th>
               <th>Price</th>
             </tr>
           </thead>
@@ -28,11 +29,18 @@ const CartComponent = () => {
                   />
                 </td>
                 <td>{varietal.title}</td>
+                {/* <td><ItemCountComponent /></td> */}
                 <td>{varietal.count}</td>
                 <td>{varietal.price}</td>
               </tr>
             ))}
           </tbody>
+          <thead>
+            <tr>
+              <td colSpan="3">Total</td>
+              <td>${totalPrice()}</td>
+            </tr>
+          </thead>
         </Table>
     );
   };
