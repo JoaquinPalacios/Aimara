@@ -1,13 +1,24 @@
-// import { useContext } from "react"
-// import { Spinner } from "react-bootstrap";
-// import CartContext, { useCartContext } from "../../Context/CartContext"
-
 import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
 // import ItemCountComponent from "../ItemCount";
 
-const CartComponent = () => {
-    const { list, totalPrice } = useCartContext();
+const emptyCart = () => {
+  return(
+  <>
+    <div>
+      <h3>The Cart is empty</h3>
+      <p>
+        Return to home to see our products
+      </p>
+      <Link to='/' ><button className="btn btn-info"> Home </button></Link>
+    </div>
+  </>
+  );
+};
+
+const CartFunction = () => {
+  const { list, totalPrice } = useCartContext();
     return (
         <Table striped hover>
           <thead>
@@ -31,7 +42,7 @@ const CartComponent = () => {
                 <td>{varietal.title}</td>
                 {/* <td><ItemCountComponent /></td> */}
                 <td>{varietal.count}</td>
-                <td>{varietal.price}</td>
+                <td>${varietal.price}</td>
               </tr>
             ))}
           </tbody>
@@ -44,31 +55,15 @@ const CartComponent = () => {
         </Table>
     );
   };
-// const CartComponent = (varietals) => {
-//     // const CartContextUse = useContext(CartContext);
-//     const { list, addCart } = useCartContext;
-//     // console.log(CartContextUse);
-//     console.log(addCart);
 
+const CartComponent = () => {
+    const { list } = useCartContext();
     
-//     return(
-//         <>
-//         {list.map((varietals, key) => (
-//         <div key={key}>
-//           <ul>
-//               <li>
-//               <h3>
-//               Product: {varietals.title}
-//               </h3>
-//               <h3>
-//               Quantiy:
-//               </h3>
-//               </li>
-//           </ul>
-//         </div>
-//         ))}
-//         </>
-//     ) 
-// };
+    return (
+      <>
+      {list.length !== 0 ? <CartFunction /> : <emptyCart />}
+      </>
+    );
+  };
 
 export default CartComponent;
