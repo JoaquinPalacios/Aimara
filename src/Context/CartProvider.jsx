@@ -20,13 +20,17 @@ export const CartProvider = ({ children }) => {
         }
       };
       console.log("list", list);
+      
       const totalPrice = () => {
         return list.reduce((prev, next) => (prev + (next.count * next.price)), 0)
       };  
+      const totalQuantity = () => {
+        return list.reduce((prev, next) => (prev + (next.count)), 0)
+      };
 
     return(
     <>
-      <CartContext.Provider value={{ list, addCart, totalPrice }}>
+      <CartContext.Provider value={{ list, addCart, totalPrice, totalQuantity }}>
           {children}
       </CartContext.Provider>
     </>);

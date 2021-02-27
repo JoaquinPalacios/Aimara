@@ -3,24 +3,11 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
 // import ItemCountComponent from "../ItemCount";
 
-const emptyCart = () => {
-  return(
-  <>
-    <div>
-      <h3>The Cart is empty</h3>
-      <p>
-        Return to home to see our products
-      </p>
-      <Link to='/' ><button className="btn btn-info"> Home </button></Link>
-    </div>
-  </>
-  );
-};
-
-const CartFunction = () => {
+const CartComponent = () => {
   const { list, totalPrice } = useCartContext();
     return (
-        <Table striped hover>
+      <>
+      {list.length > 0 ? (<Table striped hover className="text-muted">
           <thead>
             <tr>
               <th>Product</th>
@@ -47,22 +34,19 @@ const CartFunction = () => {
             ))}
           </tbody>
           <thead>
-            <tr>
+            <tr className="font-weight-bold">
               <td colSpan="3">Total</td>
               <td>${totalPrice()}</td>
             </tr>
           </thead>
-        </Table>
-    );
-  };
-
-const CartComponent = () => {
-    const { list } = useCartContext();
-    
-    return (
-      <>
-      {list.length !== 0 ? <CartFunction /> : <emptyCart />}
-      </>
+        </Table>) : (<div className="py-5">
+            <h3 className="d-flex justify-content-center pt-5 text-muted">The Cart is empty</h3>
+            <p className="d-flex justify-content-center text-muted">
+              Return to home to see our products
+            </p>
+            <Link to='/' className="d-flex justify-content-center text-decoration-none"><button className="btn btn-info"> Home </button></Link>
+        </div>)}
+        </>
     );
   };
 
