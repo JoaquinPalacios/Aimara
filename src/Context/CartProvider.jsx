@@ -24,28 +24,7 @@ export const CartProvider = ({ children }) => {
       const deleteProd = (varietalCount) => {
         const newItems = list.filter((item) => item.id !== varietalCount.id)
         setList(newItems);
-      };
-   
-     
-      // const clearCart = () => {
-      //   setList([]);
-      // };
-
-      // const deleteProd = (varietalCount) => {
-      //   if (list.find((item) => item.id === varietalCount.id)) {
-      //     const deleteVarietal = list.map((varietal) => {
-      //       if (varietal.id === varietalCount.id) {
-      //         return { ...varietal, count: null };
-      //       }
-      //       return varietal;
-      //     });
-      //     setList(deleteVarietal);
-      //   } else {
-      //     setList((state) => {
-      //       return [...state, varietalCount];
-      //     });
-      //   }
-      // };
+      };  
       
       const totalPrice = () => {
         return list.reduce((prev, next) => (prev + (next.count * next.price)), 0)

@@ -29,11 +29,11 @@ const CartComponent = () => {
                     style={{ width: "82px" }}
                   />
                 </td>
-                <td>{varietal.title}</td>
+                <td className="align-middle">{varietal.title}</td>
                 {/* <td><ItemCountComponent /></td> */}
-                <td>{varietal.count}</td>
-                <td>${varietal.price}</td>
-                <td className="badge badge-info"><button onClick={() => deleteProd(varietal)} />Remove</td>
+                <td className="align-middle">{varietal.count}</td>
+                <td className="align-middle">${varietal.price}</td>
+                <td className="align-middle"><button onClick={() => deleteProd(varietal)} className="badge badge-info">Remove</button></td>
               </tr>
             ))}
           </tbody>
