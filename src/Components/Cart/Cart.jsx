@@ -4,9 +4,12 @@ import { useCartContext } from "../../Context/CartContext";
 // import ItemCountComponent from "../ItemCount";
 
 const CartComponent = () => {
-  const { list, totalPrice } = useCartContext();
+  const { list, totalPrice, deleteProd } = useCartContext();
     return (
       <>
+      <h1 className="py-4 text-center text-muted">
+        Cart
+      </h1>
       {list.length > 0 ? (<Table striped hover className="text-muted">
           <thead>
             <tr>
@@ -30,6 +33,7 @@ const CartComponent = () => {
                 {/* <td><ItemCountComponent /></td> */}
                 <td>{varietal.count}</td>
                 <td>${varietal.price}</td>
+                <td className="badge badge-info">Remove {deleteProd()}</td>
               </tr>
             ))}
           </tbody>

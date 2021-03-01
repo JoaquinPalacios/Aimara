@@ -11,6 +11,11 @@ body {
     background-color: rgba(196,199,158,255);
     border: none;
 };
+.imagesize {
+    border-radius: 8px;
+    background-size: 100% 100%;
+};
+
 // $spacers: (
 //   0: 0,
 //   1: ($spacer * .25),

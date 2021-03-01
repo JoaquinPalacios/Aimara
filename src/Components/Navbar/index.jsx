@@ -24,7 +24,7 @@ const NavBar = () => (
                 <Nav className="mx-3">Contact</Nav>
             </Link>
         </Nav>
-        <NavLink to="/Cart" className="text-muted"><CartWidgetComponet /></NavLink>
+        <NavLink to="/Cart" className="pl-3 pr-1 text-muted"><CartWidgetComponet /></NavLink>
     </NavbarBootstrap>
   </>
 );
