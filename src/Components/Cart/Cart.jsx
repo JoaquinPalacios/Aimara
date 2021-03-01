@@ -33,7 +33,7 @@ const CartComponent = () => {
                 {/* <td><ItemCountComponent /></td> */}
                 <td>{varietal.count}</td>
                 <td>${varietal.price}</td>
-                <td className="badge badge-info">Remove {deleteProd()}</td>
+                <td className="badge badge-info"><button onClick={() => deleteProd(varietal)} />Remove</td>
               </tr>
             ))}
           </tbody>
