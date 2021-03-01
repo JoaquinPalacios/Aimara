@@ -1,23 +1,28 @@
-import { useState } from "react";
+import { OverlayTrigger, Popover } from "react-bootstrap";
 import CartComponent from "../Cart/Cart";
+import CartWidgetComponet from "../CartWidget/CartWidget";
 
 const CartHover = () => {
-    const [show, setShow] = useState(false);
-    const showCart = (e)=>{
-        setShow(!show);
-    };
-    const hideCart = e => {
-        setShow(false);
-    };
-    return (
+    const popOver = (
+        <Popover>
+          <Popover.Content>
+            <CartComponent />
+          </Popover.Content>
+        </Popover>
+      );
+    return(
         <>
-        <div>
-            <CartComponent
-            show={show}
-            onMouseEnter={showCart} 
-            onMouseLeave={hideCart}/>
-        </div>
+        <OverlayTrigger
+        trigger={["click", "hover"]}
+        rootClose={true}
+        placement={"bottom"}
+        overlay={popOver}>
+          <div className={"d-inline-block"}>
+              <CartWidgetComponet />
+          </div>
+        </OverlayTrigger>
         </>
-    )
+    );
 };
+
 export default CartHover;

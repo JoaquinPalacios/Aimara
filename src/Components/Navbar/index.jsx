@@ -1,7 +1,8 @@
 import React from "react";
 import { Navbar as NavbarBootstrap, Nav } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
-import CartWidgetComponet from "../CartWidget/CartWidget";
+import CartHover from "../CartHover/CartHover";
+// import CartWidgetComponet from "../CartWidget/CartWidget";
 import LogoComponent from "../Logo/LogoComponent";
 
 const NavBar = () => (
@@ -24,7 +25,7 @@ const NavBar = () => (
                 <Nav className="mx-3">Contact</Nav>
             </Link>
         </Nav>
-        <NavLink to="/Cart" className="pl-3 pr-1 text-muted"><CartWidgetComponet /></NavLink>
+        <NavLink to="/Cart" className="pl-3 pr-1 text-muted"><CartHover /></NavLink>
     </NavbarBootstrap>
   </>
 );
