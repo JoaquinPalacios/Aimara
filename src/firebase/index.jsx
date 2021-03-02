@@ -1,5 +1,5 @@
  import firebase from 'firebase/app';
- import "@firebase/firestore";
+ import "firebase/firestore";
  
  // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -16,11 +16,8 @@
 
 export const getFirebase = () => {
     return app;
-}
+};
 export const getFirestore = () => {
-    firebase.analytics();
+    // firebase.analytics();
     return firebase.firestore(app);
-}
-//   // Initialize Firebase
-//   firebase.initializeApp(firebaseConfig);
-//   firebase.analytics();
+};
