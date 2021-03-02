@@ -24,7 +24,7 @@ const CartComponent = () => {
               <tr key={varietal.id}>
                 <td>
                   <img
-                    src={varietal.pictureUrl}
+                    src={varietal.image}
                     alt='img'
                     style={{ width: "82px" }}
                   />

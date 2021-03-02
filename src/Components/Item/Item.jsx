@@ -6,7 +6,7 @@ const Item = ({ varietals }) => {
     <>
         <Container className="px-1">
             <Card className="clemmy">
-                <Card.Img variant="top" src={varietals.pictureUrl} className="shadow imagesize"/>
+                <Card.Img variant="top" src={varietals.image} className="shadow imagesize"/>
                 <Card.Body>
                     <Card.Title className="d-flex justify-content-center text-muted">
                         {varietals.title}
