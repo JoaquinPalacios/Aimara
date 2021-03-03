@@ -1,4 +1,4 @@
-import { Table } from "react-bootstrap";
+import { Button, Col, Container, Form, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
 // import ItemCountComponent from "../ItemCount";
@@ -10,7 +10,7 @@ const CartComponent = ({header = false}) => {
       {!header &&<h1 className="py-4 text-center text-muted">
         Cart
       </h1>}
-      {list.length > 0 ? (<Table striped hover className="text-muted">
+      {list.length > 0 ? (<div><Container><Table striped hover className="text-muted">
           <thead>
             <tr>
               <th>Product</th>
@@ -39,13 +39,36 @@ const CartComponent = ({header = false}) => {
             ))}
           </tbody>
           <tfoot>
-            <tr className="font-weight-bold">
+            <tr className="font-weight-bold h4 mr-5 pr-5">
               <td colSpan={(!header) ? 4 : 3} className="text-right">Total</td>
-              <td>${totalPrice()}</td>
+              <td className="mr-5 pr-5">${totalPrice()}</td>
             </tr>
           </tfoot>
-        </Table>
-        
+        </Table>         
+         {!header && <div className="mr-5 pr-5"><Form as={Col} className="mx-5 px-5 text-muted">
+          <Form.Group>
+            <Form.Label>Name</Form.Label>
+            <Form.Control className="font-italic font-weight-lighter" type="text" placeholder="Enter name.." />
+          </Form.Group>
+          {/* <br /> */}
+          <Form.Group>
+            <Form.Label>Email address</Form.Label>
+            <Form.Control className="font-italic font-weight-lighter" type="email" placeholder="Enter email.." />            
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Telephone Number</Form.Label>
+            <Form.Control className="font-italic font-weight-lighter" type="tel" placeholder="Enter telephone number.." />
+          </Form.Group>        
+          <Form.Text className="text-muted">
+              We'll never share your information with anyone else.
+          </Form.Text>         
+        </Form>
+        <br />
+        <Button variant="info" className="mx-auto d-block" size="lg">Place order</Button>
+        <br />
+        </div>}
+        </Container>
+        </div>
         ) : (<div className="py-5">
             <h3 className="d-flex justify-content-center pt-5 text-muted">The Cart is empty</h3>
             <p className="d-flex justify-content-center text-muted">
