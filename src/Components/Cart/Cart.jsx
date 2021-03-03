@@ -7,9 +7,9 @@ const CartComponent = ({header = false}) => {
   const { list, totalPrice, deleteProd } = useCartContext();
     return (
       <>
-      <h1 className="py-4 text-center text-muted">
+      {!header &&<h1 className="py-4 text-center text-muted">
         Cart
-      </h1>
+      </h1>}
       {list.length > 0 ? (<Table striped hover className="text-muted">
           <thead>
             <tr>
@@ -44,7 +44,9 @@ const CartComponent = ({header = false}) => {
               <td>${totalPrice()}</td>
             </tr>
           </tfoot>
-        </Table>) : (<div className="py-5">
+        </Table>
+        
+        ) : (<div className="py-5">
             <h3 className="d-flex justify-content-center pt-5 text-muted">The Cart is empty</h3>
             <p className="d-flex justify-content-center text-muted">
               Return to home to see our products
