@@ -14,7 +14,7 @@ const ItemListContainer = () => {
     const db = getFirestore();
     let docRef;
     if(categoryId){
-        docRef = db.collection('Items').where('categoryId', '===', categoryId);
+        docRef = db.collection('Items').where('category', '==', categoryId);
     }else{
         docRef = db.collection('Items');
     }

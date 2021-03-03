@@ -12,15 +12,21 @@ import { getFirestore } from "../../firebase";
 
 const ItemDetailContainer = () => {      
     const [varietals, setVarietals] = useState([]);
-    const { varietalId } = useParams([]);
+    const { varietalId } = useParams();
     console.log(varietalId);
     
 
     useEffect(() => {
       const db = getFirestore();
-        const docRef = db.collection('Items').doc(varietalId);
+        const docRef = db.collection('Items').where("title", "==", varietalId);
         docRef.get().then((querySnapshot) => {
-          setVarietals({ id:querySnapshot.id, ...querySnapshot.data() });
+          if(querySnapshot.docs.length > 0) {
+            const queryResult = querySnapshot.docs.map( doc => ({id: doc.id, ...doc.data()}));
+            console.log(queryResult);
+            setVarietals(queryResult[0]);
+          }
+          // console.log("querydata", querySnapshot.data)
+          // setVarietals({ id:querySnapshot.id, ...querySnapshot.data() });
         });
     }, [varietalId])
     //   showProduct(varietalId).then((product) => {

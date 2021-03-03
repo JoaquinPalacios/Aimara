@@ -5,6 +5,7 @@ export const CartProvider = ({ children }) => {
     const [list, setList] = useState([]);
 
     const addCart = (varietalCount) => {
+      console.log("varietal para el carrito", varietalCount);
         if (list.find((item) => item.id === varietalCount.id)) {
           const newVarietal = list.map((varietal) => {
             if (varietal.id === varietalCount.id) {

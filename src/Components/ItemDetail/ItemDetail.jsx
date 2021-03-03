@@ -14,7 +14,7 @@ const ItemDetail = ({ varietals }) => {
         setCheckout(true);
         addCart({
           id: varietals.id,
-          pictureUrl: varietals.image,
+          image: varietals.image,
           price: varietals.price,
           title: varietals.title,
           count

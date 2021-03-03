@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
 // import ItemCountComponent from "../ItemCount";
 
-const CartComponent = () => {
+const CartComponent = ({header = false}) => {
   const { list, totalPrice, deleteProd } = useCartContext();
     return (
       <>
@@ -17,6 +17,7 @@ const CartComponent = () => {
               <th>Title</th>
               <th>Quantity</th>
               <th>Price</th>
+              {!header && <th>&nbsp;</th>}
             </tr>
           </thead>
           <tbody>
@@ -33,16 +34,16 @@ const CartComponent = () => {
                 {/* <td><ItemCountComponent /></td> */}
                 <td className="align-middle">{varietal.count}</td>
                 <td className="align-middle">${varietal.price}</td>
-                <td className="align-middle"><button onClick={() => deleteProd(varietal)} className="badge badge-info">Remove</button></td>
+                {!header && <td className="align-middle"><button onClick={() => deleteProd(varietal)} className="badge badge-info">Remove</button></td>}
               </tr>
             ))}
           </tbody>
-          <thead>
+          <tfoot>
             <tr className="font-weight-bold">
-              <td colSpan="3">Total</td>
+              <td colSpan={(!header) ? 4 : 3} className="text-right">Total</td>
               <td>${totalPrice()}</td>
             </tr>
-          </thead>
+          </tfoot>
         </Table>) : (<div className="py-5">
             <h3 className="d-flex justify-content-center pt-5 text-muted">The Cart is empty</h3>
             <p className="d-flex justify-content-center text-muted">

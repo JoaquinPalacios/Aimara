@@ -6,7 +6,7 @@ const CartHover = () => {
     const popOver = (
         <Popover className="popover">
           <Popover.Content>
-            <CartComponent />
+            <CartComponent header={true}/>
           </Popover.Content>
         </Popover>
       );
