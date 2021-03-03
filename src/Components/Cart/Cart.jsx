@@ -59,7 +59,7 @@ const CartComponent = ({header = false}) => {
             <Form.Label>Telephone Number</Form.Label>
             <Form.Control className="font-italic font-weight-lighter" type="tel" placeholder="Enter telephone number.." />
           </Form.Group>        
-          <Form.Text className="text-muted">
+          <Form.Text className="font-italic text-muted">
               We'll never share your information with anyone else.
           </Form.Text>         
         </Form>
