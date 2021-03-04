@@ -1,13 +1,12 @@
 import { Button, Col, Container, Form, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
-// import ItemCountComponent from "../ItemCount";
 
 const CartComponent = ({header = false}) => {
   const { list, totalPrice, deleteProd } = useCartContext();
     return (
       <>
-      {!header &&<h1 className="py-4 text-center text-muted">
+      {!header && <h1 className="py-4 text-center text-muted">
         Cart
       </h1>}
       {list.length > 0 ? (<div><Container><Table striped hover className="text-muted">
@@ -31,7 +30,6 @@ const CartComponent = ({header = false}) => {
                   />
                 </td>
                 <td className="align-middle">{varietal.title}</td>
-                {/* <td><ItemCountComponent /></td> */}
                 <td className="align-middle">{varietal.count}</td>
                 <td className="align-middle">${varietal.price}</td>
                 {!header && <td className="align-middle"><button onClick={() => deleteProd(varietal)} className="badge badge-info">Remove</button></td>}
@@ -69,12 +67,12 @@ const CartComponent = ({header = false}) => {
         </div>}
         </Container>
         </div>
-        ) : (<div className="py-5">
+        ) : (<div>
             <h3 className="d-flex justify-content-center pt-5 text-muted">The Cart is empty</h3>
-            <p className="d-flex justify-content-center text-muted">
+            {!header && <p className="d-flex justify-content-center text-muted">
               Return to home to see our products
-            </p>
-            <Link to='/' className="d-flex justify-content-center text-decoration-none"><button className="btn btn-info"> Home </button></Link>
+            </p>}
+            {!header && <Link to='/' className="d-flex justify-content-center text-decoration-none"><button className="btn btn-info"> Home </button></Link>}
         </div>)}
         </>
     );
