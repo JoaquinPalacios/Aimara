@@ -1,9 +1,23 @@
+import { useState } from "react";
 import { Button, Col, Container, Form, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
+import { getFirestore } from "../../firebase";
 
 const CartComponent = ({header = false}) => {
   const { list, totalPrice, deleteProd } = useCartContext();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
+const placeOrder = () => {
+  let newOrder = { Buyer: {name: name, email: email, phone: phone}, items: [...list], total: {totalPrice}};
+  console.log("newOreder", newOrder);
+  const fsDB = getFirestore();
+  const orederCollection = fsDB.collection("orders");
+  orederCollection.add(newOrder);
+}
+
     return (
       <>
       {!header && <h1 className="py-4 text-center text-muted">
@@ -23,11 +37,7 @@ const CartComponent = ({header = false}) => {
             {list.map((varietal) => (
               <tr key={varietal.id}>
                 <td>
-                  <img
-                    src={varietal.image}
-                    alt='img'
-                    style={{ width: "82px" }}
-                  />
+                  <img src={varietal.image} alt='img' style={{ width: "82px" }} />
                 </td>
                 <td className="align-middle">{varietal.title}</td>
                 <td className="align-middle">{varietal.count}</td>
@@ -46,24 +56,21 @@ const CartComponent = ({header = false}) => {
          {!header && <div className="mr-5 pr-5"><Form as={Col} className="mx-5 px-5 text-muted">
           <Form.Group>
             <Form.Label>Name</Form.Label>
-            <Form.Control className="font-italic font-weight-lighter" type="text" placeholder="Enter name.." />
+            <Form.Control className="font-italic font-weight-lighter" type="text" placeholder="Enter name.." onChange={(e) => {setName(e.target.value)}} />
           </Form.Group>
-          {/* <br /> */}
           <Form.Group>
             <Form.Label>Email address</Form.Label>
-            <Form.Control className="font-italic font-weight-lighter" type="email" placeholder="Enter email.." />            
+            <Form.Control className="font-italic font-weight-lighter" type="email" placeholder="Enter email.." onChange={(e) => {setEmail(e.target.value)}} />            
           </Form.Group>
           <Form.Group>
             <Form.Label>Telephone Number</Form.Label>
-            <Form.Control className="font-italic font-weight-lighter" type="tel" placeholder="Enter telephone number.." />
+            <Form.Control className="font-italic font-weight-lighter" type="tel" placeholder="Enter telephone number.." onChange={(e) => {setPhone(e.target.value)}} />
           </Form.Group>        
           <Form.Text className="font-italic text-muted">
               We'll never share your information with anyone else.
           </Form.Text>         
         </Form>
-        <br />
-        <Button variant="info" className="mx-auto d-block" size="lg">Place order</Button>
-        <br />
+        <Button variant="info" className="mx-auto my-4 d-block" size="lg" onClick={() => {placeOrder()}}>Place order</Button>
         </div>}
         </Container>
         </div>
