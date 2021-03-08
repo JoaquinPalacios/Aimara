@@ -18,12 +18,6 @@ body {
 .popover {
     max-width: 400px;
   };
-// $spacers: (
-//   0: 0,
-//   1: ($spacer * .25),
-//   2: ($spacer * .5),
-//   3: $spacer,
-//   4: ($spacer * 1.5),
-//   5: ($spacer * 3),
-//   6: ($spacer * 5)
-// );
+  .jumbotronBg {
+    background-color: rgba(100,36,36,255); 
+};

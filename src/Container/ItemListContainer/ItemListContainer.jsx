@@ -29,28 +29,6 @@ const ItemListContainer = () => {
     console.log("categoryId", categoryId);
     console.log("varietals", varietals)
 
-    // // Guardamos la referencia de la coleccion que queremos tomar
-    // const itemCollection = baseDeDatos.collection('Items');
-    
-    // // Tomando los datos
-    // itemCollection.get().then((value) => {
-    //   let aux = value.docs.map(element => {
-    //     return {...element.data(), id:element.id}})
-    //     setVarietals(aux);
-    //   });
-    //   console.log(setVarietals);
-
-  //   const myPromise = new Promise((resolve, reject) => {
-  //     if (categoryId) {
-  //       const products = aimara.filter((producto) => {
-  //       return producto.category.toString() === categoryId;
-  //       });
-  //       resolve(products);
-  //     } else resolve(aimara);
-  //       });
-  //   myPromise.then((result) => setVarietals(result));
-  // }, [categoryId]);
-// }, []);
 return <ItemList varietals={varietals} />
 }
 
