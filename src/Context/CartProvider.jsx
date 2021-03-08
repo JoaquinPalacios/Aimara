@@ -3,6 +3,8 @@ import { CartContext } from "./CartContext";
 
 export const CartProvider = ({ children }) => {
     const [list, setList] = useState([]);
+    const [orderId, setOrderId] = useState();
+
 
     const addCart = (varietalCount) => {
       console.log("varietal para el carrito", varietalCount);
@@ -36,7 +38,7 @@ export const CartProvider = ({ children }) => {
 
     return(
     <>
-      <CartContext.Provider value={{ list, addCart, totalPrice, totalQuantity, deleteProd }}>
+      <CartContext.Provider value={{ list, addCart, totalPrice, totalQuantity, deleteProd, orderId, setOrderId }}>
           {children}
       </CartContext.Provider>
     </>);

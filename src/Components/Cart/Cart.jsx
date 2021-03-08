@@ -5,17 +5,19 @@ import { useCartContext } from "../../Context/CartContext";
 import { getFirestore } from "../../firebase";
 
 const CartComponent = ({header = false}) => {
-  const { list, totalPrice, deleteProd } = useCartContext();
+  const { list, totalPrice, deleteProd, orderId, setOrderId } = useCartContext();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
 
 const placeOrder = () => {
-  let newOrder = { Buyer: {name: name, email: email, phone: phone}, items: [...list], total: {totalPrice}};
+  let newOrder = { Buyer: {name: name, email: email, phone: phone}, items: [...list], total: totalPrice()};
   console.log("newOreder", newOrder);
   const fsDB = getFirestore();
   const orederCollection = fsDB.collection("orders");
-  orederCollection.add(newOrder);
+  orederCollection.add(newOrder).then((value) => {
+    setOrderId(value.id);
+  });
 }
 
     return (
@@ -70,7 +72,7 @@ const placeOrder = () => {
               We'll never share your information with anyone else.
           </Form.Text>         
         </Form>
-        <Button variant="info" className="mx-auto my-4 d-block" size="lg" onClick={() => {placeOrder()}}>Place order</Button>
+        <Link to='/PurchaseDone' orderId={orderId}><Button variant="info" className="mx-auto my-4 d-block" size="lg" onClick={() => {placeOrder()}}>Place order</Button></Link>
         </div>}
         </Container>
         </div>
