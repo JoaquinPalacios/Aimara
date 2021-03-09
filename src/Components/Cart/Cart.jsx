@@ -2,23 +2,25 @@ import { useState } from "react";
 import { Button, Col, Container, Form, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
-import { getFirebase, getFirestore } from "../../firebase";
+import { getFirestore } from "../../firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 const CartComponent = ({header = false}) => {
-  const { list, totalPrice, deleteProd, orderId, setOrderId, date, setDate } = useCartContext();
+  const { list, totalPrice, deleteProd, orderId, setOrderId, date, setDate, resetCartList } = useCartContext();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
 
-  let datePurchase = new Date()
-        setDate(datePurchase.toLocaleString());
-const placeOrder = () => {
-  let newOrder = { Buyer: {name: name, email: email, phone: phone}, items: [...list], Date: getFirebase.firestore.Timestamp.fromDate(datePurchase), total: totalPrice()};
-  console.log("newOreder", newOrder);
-  const fsDB = getFirestore();
-  const orederCollection = fsDB.collection("orders");
-  orederCollection.add(newOrder).then((value) => {
-    setOrderId(value.id);
+  let datePurchase = new Date();
+    setDate(datePurchase.toLocaleString());
+  const placeOrder = () => {
+    let newOrder = { Buyer: {name: name, email: email, phone: phone}, items: [...list], Date: firebase.firestore.FieldValue.serverTimestamp(), total: totalPrice()};
+    console.log("newOreder", newOrder);
+    const fsDB = getFirestore();
+    const orederCollection = fsDB.collection("orders");
+    orederCollection.add(newOrder).then((value) => {
+      setOrderId(value.id);
   });
 }
 
@@ -74,7 +76,7 @@ const placeOrder = () => {
               We'll never share your information with anyone else.
           </Form.Text>         
         </Form>
-        <Link to='/PurchaseDone' orderId={orderId} date={date}><Button variant="info" className="mx-auto my-4 d-block" size="lg" onClick={() => {placeOrder()}}>Place order</Button></Link>
+        <Link to='/PurchaseDone' orderId={orderId} date={date}><Button variant="info" className="mx-auto my-4 d-block" size="lg" onClick={() => {placeOrder(); resetCartList();}}>Place order</Button></Link>
         </div>}
         </Container>
         </div>

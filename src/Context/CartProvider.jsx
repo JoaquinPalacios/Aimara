@@ -37,10 +37,13 @@ export const CartProvider = ({ children }) => {
       const totalQuantity = () => {
         return list.reduce((prev, next) => (prev + (next.count)), 0)
       };
+      const resetCartList = () => {
+        setList([])
+      };
 
     return(
     <>
-      <CartContext.Provider value={{ list, addCart, totalPrice, totalQuantity, deleteProd, orderId, setOrderId, date, setDate }}>
+      <CartContext.Provider value={{ list, addCart, totalPrice, totalQuantity, deleteProd, orderId, setOrderId, date, setDate, resetCartList }}>
           {children}
       </CartContext.Provider>
     </>);
