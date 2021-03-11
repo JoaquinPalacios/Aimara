@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import FooterComponent from "../Footer";
 import HomeComponent from "../Home/Home";
 import Item from "../Item/Item";
 
@@ -21,6 +22,7 @@ const ItemList = ({ varietals }) => {
         </>
         )})}
       </div>
+      <FooterComponent />
       </>
   );
 };
