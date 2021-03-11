@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Carousel, Container } from "react-bootstrap";
 
 const HomeComponent = () => {
     return (
@@ -17,12 +17,40 @@ With more than two centuries of history, Aimara produce their wines in the regio
               </p>
           </Container>
           <br />
-          <br />
-          <p class="blockquote font-italic mx-auto w-50 text-center text-muted">
-              "Enjoying fine food and wine at the family table, surrounded by your love ones and friends, is not just a joy- It's one of the highest forms of living."
-              <br />
-              <cite title="Source Title"> Robert Mondavi</cite>
-          </p>
+        <br />
+        <Carousel className="d-block w-100 carousels" interval={7000} controls={false} indicators={false}>                       
+            <Carousel.Item>    
+                <p className="blockquote font-italic mx-auto w-50 text-center text-muted">
+            "Enjoying fine food and wine at the family table, surrounded by your love ones and friends, is not just a joy- It's one of the highest forms of living."
+                <br />
+                  <cite title="Source Title"> Robert Mondavi</cite>
+                </p>
+            </Carousel.Item>
+            <Carousel.Item>  
+                <p className="blockquote font-italic mx-auto w-50 text-center text-muted">
+                    "More important than the food pairing is the person with whom you drink the wine"
+                    <cite title="Source Title"> Christian Moueix</cite>
+                </p>
+            </Carousel.Item>
+            <Carousel.Item>              
+                <p className="blockquote font-italic mx-auto w-50 text-center text-muted">
+                    "Wine... the intellectual part of the meal."
+                    <cite title="Source Title"> Alexandre Dumas</cite>
+                </p>
+            </Carousel.Item>
+            <Carousel.Item>              
+                <p className="blockquote font-italic mx-auto w-50 text-center text-muted">
+                    "Wine makes daily living easier, less hurried, with fewer tensions and more tolerance."
+                    <cite title="Source Title"> Benjamin Franklin</cite>
+                </p>
+            </Carousel.Item>
+            <Carousel.Item>              
+                <p className="blockquote font-italic mx-auto w-50 text-center text-muted">
+                    "Wine is one of the most civilized things in the world and one of the most natural things of the world that has been brought to the greatest perfection, and it offers a greater range for enjoyment and appreciation than, possibly, any other purely sensory thing."
+                    <cite title="Source Title"> Ernest Hemingway</cite>
+                </p>
+            </Carousel.Item>
+        </Carousel>      
           <br />
           <br />
           <br />

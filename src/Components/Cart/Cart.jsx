@@ -76,7 +76,7 @@ const CartComponent = ({header = false}) => {
               We'll never share your information with anyone else.
           </Form.Text>         
         </Form>
-        <Link to='/PurchaseDone' orderId={orderId} date={date}><Button variant="info" className="mx-auto my-4 d-block" size="lg" onClick={() => {placeOrder(); resetCartList();}}>Place order</Button></Link>
+        <Link to='/PurchaseDone' className="text-decoration-none" orderId={orderId} date={date}><Button variant="info" className="mx-auto my-4 d-block" size="lg" onClick={() => {placeOrder(); resetCartList();}}>Place order</Button></Link>
         </div>}
         </Container>
         </div>
