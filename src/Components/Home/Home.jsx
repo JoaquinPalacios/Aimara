@@ -18,7 +18,7 @@ With more than two centuries of history, Aimara produce their wines in the regio
           </Container>
           <br />
         <br />
-        <Carousel className="d-block w-100 carousels" interval={7000} controls={false} indicators={false}>                       
+        <Carousel className="d-block w-100 carousels" interval={7000} controls={false} indicators={false} fade>                       
             <Carousel.Item>    
                 <p className="blockquote font-italic mx-auto w-50 text-center text-muted">
             "Enjoying fine food and wine at the family table, surrounded by your love ones and friends, is not just a joy- It's one of the highest forms of living."
