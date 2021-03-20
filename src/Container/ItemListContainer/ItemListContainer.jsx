@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import aimara from "../../aimara";
 import ItemList from "../../Components/ItemList/ItemList";
 import { getFirestore } from "../../firebase";
 

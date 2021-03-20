@@ -1,6 +1,5 @@
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import FooterComponent from "../Footer";
 import HomeComponent from "../Home/Home";
 import Item from "../Item/Item";
 
@@ -14,7 +13,7 @@ const ItemList = ({ varietals }) => {
         {varietals.map((varietals) => {
         return (
         <>
-        <Container className="mt-5">            
+        <Container className="my-5">            
             <Link to={`/item/${varietals.title}`} className="text-decoration-none text-muted">
               <Item style={{ width: '18rem' }} key={varietals.id} varietals={varietals} />
             </Link>            
@@ -22,7 +21,6 @@ const ItemList = ({ varietals }) => {
         </>
         )})}
       </div>
-      <FooterComponent />
       </>
   );
 };
