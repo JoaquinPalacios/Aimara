@@ -1,5 +1,5 @@
 import { Card, Container } from "react-bootstrap";
-// import "./Style.scss";
+import './Style.scss';
 
 const Item = ({ varietals }) => {
     return (
