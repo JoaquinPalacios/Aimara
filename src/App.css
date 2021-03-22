@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+.clem {
+  border: black 1px;    
+  margin: 40px 75px;
+};
+body {
+  background-color: rgba(196,199,158,255);
+};
+.clemmy {
+  background-color: rgba(196,199,158,255);
+  border: none;
+};
+.imagesize {
+  border-radius: 8px;
+  background-size: 100% 100%;
+};
+.popover {
+  max-width: 400px;
+};
+.jumbotronBg {
+  background-color: rgba(100,36,36,255); 
+};
+.carousels {
+  height: 150px;
+};
+
+.flexItems {
+  display:flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 0px) and (max-width: 992px) {
+  #myCarousel { display: none; }  /* hide it elsewhere */  
+  #myItems {
+      display:flex;
+      flex-direction: column;
+  }  
+};
+
+@media screen and (min-width: 993px) {
+  #myCarousel { display: block; }   /* show it on big screens */
+  #myItems {
+      display:flex;
+      flex-direction: row;
+  }  
+};

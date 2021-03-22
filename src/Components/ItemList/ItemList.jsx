@@ -9,7 +9,7 @@ const ItemList = ({ varietals }) => {
   return (
       <>
       <HomeComponent />
-      <div className="clem">    
+      <div className="clem" id='myItems'>    
         {varietals.map((varietals) => {
         return (
         <>

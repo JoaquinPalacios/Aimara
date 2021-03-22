@@ -6,8 +6,7 @@ import { getFirestore } from "../../firebase";
 const ItemDetailContainer = () => {      
     const [varietals, setVarietals] = useState([]);
     const { varietalId } = useParams();
-    console.log(varietalId);
-    
+    console.log(varietalId);    
 
     useEffect(() => {
       const db = getFirestore();

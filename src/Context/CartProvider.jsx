@@ -6,8 +6,6 @@ export const CartProvider = ({ children }) => {
     const [orderId, setOrderId] = useState();
     const [date, setDate] = useState();
 
-
-
     const addCart = (varietalCount) => {
       console.log("varietal para el carrito", varietalCount);
         if (list.find((item) => item.id === varietalCount.id)) {
