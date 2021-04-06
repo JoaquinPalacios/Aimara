@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import ItemCountComponent from "../Components/ItemCount"
-import ItemList from "../Components/ItemList/ItemList";
+import ItemCountComponent from "../../Components/ItemCount";
+import ItemList from "../../Components/ItemList/ItemList";
 import Aimara from "../Components/Products/Aimara";
 
 
