@@ -1,8 +1,11 @@
 import "firebase/firestore";
 
-import { Button, Col, Container, Form, Table } from "react-bootstrap";
-
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
+import Table from "react-bootstrap/Table";
 import firebase from "firebase/app";
 import { getFirestore } from "../../firebase";
 import { useCartContext } from "../../Context/CartContext";
