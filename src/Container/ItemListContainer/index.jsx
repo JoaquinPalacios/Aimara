@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import ItemList from "../../Components/ItemList/ItemList";
+
+import ItemList from "../../Components/ItemList";
 import { getFirestore } from "../../firebase";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {  
   const [varietals, setVarietals] = useState([])

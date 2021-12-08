@@ -1,8 +1,9 @@
-import React from "react";
-import { Navbar as NavbarBootstrap, Nav } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
-import CartHover from "../CartHover/CartHover";
-import LogoComponent from "../Logo/LogoComponent";
+import { Nav, Navbar as NavbarBootstrap } from "react-bootstrap";
+
+import CartHover from "../CartHover";
+import LogoComponent from "../Logo";
+import React from "react";
 
 const NavBar = () => (
   <>

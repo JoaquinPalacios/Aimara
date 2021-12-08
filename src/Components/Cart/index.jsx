@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { Button, Col, Container, Form, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useCartContext } from "../../Context/CartContext";
-import { getFirestore } from "../../firebase";
-import firebase from "firebase/app";
 import "firebase/firestore";
+
+import { Button, Col, Container, Form, Table } from "react-bootstrap";
+
+import { Link } from "react-router-dom";
+import firebase from "firebase/app";
+import { getFirestore } from "../../firebase";
+import { useCartContext } from "../../Context/CartContext";
+import { useState } from "react";
 
 const CartComponent = ({header = false}) => {
   const { list, totalPrice, deleteProd, orderId, setOrderId, date, setDate, resetCartList } = useCartContext();
