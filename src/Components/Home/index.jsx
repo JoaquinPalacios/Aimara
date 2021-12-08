@@ -1,4 +1,5 @@
-import { Carousel, Container } from "react-bootstrap";
+import Carousel from "react-bootstrap/Carousel";
+import Container from "react-bootstrap/Container";
 
 const HomeComponent = () => {
     return (
