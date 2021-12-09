@@ -1,5 +1,6 @@
+import './style.modlues.scss';
+
 import { Card, Container } from "react-bootstrap";
-import './Style.scss';
 
 const Item = ({ varietals }) => {
     return (

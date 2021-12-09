@@ -1,9 +1,10 @@
-import { useState } from "react";
 import { Button, Container } from "react-bootstrap";
+
+import Item from "../Item";
+import ItemCountComponent from "../ItemCount";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
-import Item from "../Item/Item";
-import ItemCountComponent from "../ItemCount";
+import { useState } from "react";
 
 const ItemDetail = ({ varietals }) => {
     const [count, setCount] = useState(1);

@@ -1,6 +1,7 @@
 import { OverlayTrigger, Popover } from "react-bootstrap";
-import CartComponent from "../Cart/Cart";
-import CartWidgetComponet from "../CartWidget/CartWidget";
+
+import CartComponent from "../Cart";
+import CartWidgetComponet from "../CartWidget";
 
 const CartHover = () => {
     const popOver = (

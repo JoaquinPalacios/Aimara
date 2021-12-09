@@ -1,9 +1,7 @@
 import { Container } from "react-bootstrap";
+import HomeComponent from "../Home";
+import Item from "../Item";
 import { Link } from "react-router-dom";
-import HomeComponent from "../Home/Home";
-import Item from "../Item/Item";
-
-
 
 const ItemList = ({ varietals }) => {
   return (
