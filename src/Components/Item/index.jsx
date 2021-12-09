@@ -1,4 +1,8 @@
+<<<<<<< HEAD:src/Components/Item/index.jsx
 import './style.modules.scss';
+=======
+import './style.modlues.scss';
+>>>>>>> main:src/Components/Item/Item.jsx
 
 import { Card, Container } from "react-bootstrap";
 
