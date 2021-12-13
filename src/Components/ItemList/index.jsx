@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import HomeComponent from "../Home";
 import Item from "../Item";
 import { Link } from "react-router-dom";
