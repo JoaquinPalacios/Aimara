@@ -1,4 +1,5 @@
-import { Button, ButtonGroup } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const ItemCountComponent = ({stock, initial, onAdd, count, setCount}) => {
     const increment = () => {

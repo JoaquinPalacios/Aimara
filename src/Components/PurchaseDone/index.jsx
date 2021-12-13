@@ -1,4 +1,6 @@
-import { Badge, Container, Jumbotron } from "react-bootstrap";
+import Badge from "react-bootstrap/Badge";
+import Container from "react-bootstrap/Jumbotron";
+import Jumbotron from "react-bootstrap/Container";
 import { useCartContext } from "../../Context/CartContext";
 
 const PurchaseDone = () => {
