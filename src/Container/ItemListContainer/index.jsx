@@ -17,7 +17,7 @@ const ItemListContainer = () => {
     }else{
         docRef = db.collection('Items');
     }
-    console.log("docRef", docRef)
+    console.log("docRef useeffect ItemListContiner", docRef)
     docRef.get().then((querySnapshot) => {
         if(querySnapshot.size === 0){
             console.log('No existen resultados');
@@ -25,8 +25,8 @@ const ItemListContainer = () => {
         setVarietals(querySnapshot.docs.map(element => ({...element.data(), id: element.id})));
     });
     }, [categoryId])
-    console.log("categoryId", categoryId);
-    console.log("varietals", varietals)
+    console.log("categoryId useParams itemListcontainer", categoryId);
+    console.log("varietals itemListcontainer", varietals)
 
 return <ItemList varietals={varietals} />
 }

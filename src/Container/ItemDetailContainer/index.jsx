@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {      
     const [varietals, setVarietals] = useState([]);
     const { varietalId } = useParams();
-    console.log(varietalId);    
+    console.log('varietalId useParams ItemDetailContainer', varietalId);    
 
     useEffect(() => {
       const db = getFirestore();
@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         docRef.get().then((querySnapshot) => {
           if(querySnapshot.docs.length > 0) {
             const queryResult = querySnapshot.docs.map( doc => ({id: doc.id, ...doc.data()}));
-            console.log(queryResult);
+            console.log('queryResults useEffect ItemDetailContainer', queryResult);
             setVarietals(queryResult[0]);
           }
         });

@@ -11,7 +11,7 @@ const ItemDetail = ({ varietals }) => {
     const [checkout, setCheckout] = useState(false);
     const { addCart } = useCartContext();
     const onAdd = (count) => {
-        console.log("Selected ", count);
+        console.log("Selected ItemDetail", count);
         setCheckout(true);
         addCart({
           id: varietals.id,

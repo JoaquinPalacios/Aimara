@@ -21,7 +21,7 @@ const CartComponent = ({header = false}) => {
     setDate(datePurchase.toLocaleString());
   const placeOrder = () => {
     let newOrder = { Buyer: {name: name, email: email, phone: phone}, items: [...list], Date: firebase.firestore.FieldValue.serverTimestamp(), total: totalPrice()};
-    console.log("newOreder", newOrder);
+    console.log("newOreder Cart", newOrder);
     const fsDB = getFirestore();
     const orederCollection = fsDB.collection("orders");
     orederCollection.add(newOrder).then((value) => {

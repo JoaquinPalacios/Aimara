@@ -4,7 +4,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 const ItemCountComponent = ({stock, initial, onAdd, count, setCount}) => {
     const increment = () => {
         if (count < stock) {
-          console.log(count);
+          console.log('count ItemCountComponent', count);
           return setCount(count + 1);
         }
       };

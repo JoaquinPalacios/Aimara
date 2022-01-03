@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { CartContext } from "./CartContext";
+import { useState } from "react";
 
 export const CartProvider = ({ children }) => {
     const [list, setList] = useState([]);
@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
           });
         }
       };
-      console.log("list", list);
+      console.log("list CartProvider", list);
 
       const deleteProd = (varietalCount) => {
         const newItems = list.filter((item) => item.id !== varietalCount.id)
