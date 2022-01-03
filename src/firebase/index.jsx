@@ -5,13 +5,13 @@
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const app = firebase.initializeApp({
 //   var firebaseConfig = {
-    apiKey: "AIzaSyBjlnYjC_NSKJzk8kG_AnF49THzFp4vWdo",
-    authDomain: "aimara-react-project.firebaseapp.com",
-    projectId: "aimara-react-project",
-    storageBucket: "aimara-react-project.appspot.com",
-    messagingSenderId: "457320787924",
-    appId: "1:457320787924:web:04b22f7eb1d663b1bd7041",
-    measurementId: "G-M9N9ZLXV9G"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_API_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
   });
 
 export const getFirebase = () => {
